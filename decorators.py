@@ -99,22 +99,23 @@
 # x=dec1(add)
 # x(10,20)
 
-# import functools
-# def dec1(func):
-#     @functools.wraps(func)
-#     def wrapper1(*args,**kwargs):
-#         func(*args,**kwargs)
-#         print("discount applied")
-#     return wrapper1
-#
-# @dec1
-# def apply_discount(price):
-#     discount=50
-#     price=price-discount
-#     print(price)
-#
-# apply_discount(2500)
-# print(apply_discount.__name__)
+#6
+import functools
+def dec1(func):
+    @functools.wraps(func)
+    def wrapper1(*args,**kwargs):
+        func(*args,**kwargs)
+        print("discount applied")
+    return wrapper1
+
+@dec1
+def apply_discount(price):
+    discount=50
+    price=price-discount
+    print(price)
+
+apply_discount(2500)
+print(apply_discount.__name__)
 
 # def verify_user(func):
 #     def wrapper1(*args,**kwargs):
@@ -129,6 +130,75 @@
 #         print("Transaction logged")
 #     return wrapper2
 
-print("hello world")
+#1
+# def dec11(func):
+#     def wr11(*args,**kwargs):
+#         func(*args,**kwargs)
+#     return wr11
+#
+# @dec11
+# def get_msg(text):
+#     print(text.upper())
+#
+# get_msg("hello user")
+
+#2
+# def dec0(func):
+#     def wrp0(*args,**kwargs):
+#         func(*args,**kwargs)
+#     return wrp0
+#
+# @dec0
+# def get_Number(n):
+#     n = n*2
+#     print(n)
+#
+# get_Number(20)
+
+# 11/08/2026
+#1
+# def verify_user(func):
+#     def wrap2(*args,**kwargs):
+#         print("User Verified")
+#         func(*args,**kwargs)
+#     return wrap2
+#
+# def log_trans(func):
+#     def wrp2(*args,**kwargs):
+#         func(*args,**kwargs)
+#         print("transaction Logged")
+#     return wrp2
+#
+# @log_trans
+# @verify_user
+# def check_balance(balance):
+#      print("Balance displayed: ",balance)
+#
+# check_balance(10000)
 
 
+USA=0
+SA=0
+current_username="Pradeep@123"
+current_pwd="143143"
+def login(username,pwd):
+    global current_username,current_pwd,USA,SA
+    if current_username==username and current_pwd==pwd:
+        SA+=1
+        print("Login Successful")
+    elif current_username!=username:
+        USA+=1
+        if USA<=3:
+            x=input("Re_Enter The Username:")
+            login(x,pwd)
+        else:
+            print("Limit Reached, Please try again later")
+
+    else:
+        if USA<=3:
+            x=input("Re_Enter The Password: ")
+            login(username,x)
+        else:
+            print("Limit Reached, Please try again later")
+    return login
+login("Pradeep@122","143144")
