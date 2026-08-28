@@ -100,22 +100,22 @@
 # x(10,20)
 
 #6
-import functools
-def dec1(func):
-    @functools.wraps(func)
-    def wrapper1(*args,**kwargs):
-        func(*args,**kwargs)
-        print("discount applied")
-    return wrapper1
-
-@dec1
-def apply_discount(price):
-    discount=50
-    price=price-discount
-    print(price)
-
-apply_discount(2500)
-print(apply_discount.__name__)
+#import functools
+# def dec1(func):
+#     @functools.wraps(func)
+#     def wrapper1(*args,**kwargs):
+#         func(*args,**kwargs)
+#         print("discount applied")
+#     return wrapper1
+#
+# @dec1
+# def apply_discount(price):
+#     discount=50
+#     price=price-discount
+#     print(price)
+#
+# apply_discount(2500)
+# print(apply_discount.__name__)
 
 # def verify_user(func):
 #     def wrapper1(*args,**kwargs):
@@ -177,28 +177,28 @@ print(apply_discount.__name__)
 # check_balance(10000)
 
 
-USA=0
-SA=0
-current_username="Pradeep@123"
-current_pwd="143143"
-def login(username,pwd):
-    global current_username,current_pwd,USA,SA
-    if current_username==username and current_pwd==pwd:
-        SA+=1
-        print("Login Successful")
-    elif current_username!=username:
-        USA+=1
-        if USA<=3:
-            x=input("Re_Enter The Username:")
-            login(x,pwd)
-        else:
-            print("Limit Reached, Please try again later")
-
-    else:
-        if USA<=3:
-            x=input("Re_Enter The Password: ")
-            login(username,x)
-        else:
-            print("Limit Reached, Please try again later")
-    return login
-login("Pradeep@122","143144")
+# USA=0
+# SA=0
+# current_username="Pradeep@123"
+# current_pwd="143143"
+# def login(username,pwd):
+#     global current_username,current_pwd,USA,SA
+#     if current_username==username and current_pwd==pwd:
+#         SA+=1
+#         print("Login Successful")
+#     elif current_username!=username:
+#         USA+=1
+#         if USA<=3:
+#             x=input("Re_Enter The Username:")
+#             login(x,pwd)
+#         else:
+#             print("Limit Reached, Please try again later")
+#
+#     else:
+#         if USA<=3:
+#             x=input("Re_Enter The Password: ")
+#             login(username,x)
+#         else:
+#             print("Limit Reached, Please try again later")
+#     return login
+# login("Pradeep@122","143144")

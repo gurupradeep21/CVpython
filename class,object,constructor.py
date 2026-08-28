@@ -107,15 +107,75 @@
 # # print(obj.rollno)
 # print(student.count)
 
-class user:
-    def __init__(self,age):
-        if(age>18):
-            self.age=age
+# class user:
+#     def __init__(self,age):
+#         if(age>18):
+#             self.age=age
+#         else:
+#             print("not eligible")
+# obj=user(20)
+# print(obj.age)
+
+class BankAccount():
+    bank_name="ABC Bank"
+    def __init__(self,account_holder,account_number,balance):
+        self.account_holder=account_holder
+        self.account_number=account_number
+        if(balance<0):
+            self.balance=0
         else:
-            print("not eligible")
-obj=user(20)
-print(obj.age)
+            self.balance=balance
+    def display(self):
+        print("Bank Name: ",BankAccount.bank_name)
+        print("Account Holder: ",self.account_holder)
+        print("account number: ",self.account_number)
+        print("Balance: ",self.balance)
+
+acc1=BankAccount("pradeep",12351647,100000)
+acc2=BankAccount("balaji",9786747,-4000)
+acc1.display()
+acc2.display()
 
 
+# def display(obj):
+#     print(obj.__dict__)
+
+#2
+
+class Student():
+    college="ABC College"
+    def __init__(self,name,rollno,marks):
+        self.name=name
+        self.rollno=rollno
+        if(marks >=0 and marks <=100):
+            self.mraks=marks
+        else:
+            self.marks=0
+s1=Student("Alice",123,34)
+s2=Student("Bob",124,-94)
+s3=Student("Alice",125,10)
+print(s1.__dict__)
+print(s2.__dict__)
+print(s3.__dict__)
+
+#3
+class Product():
+
+    store_name = "ABC Store"
+    def __init__(self,name,price,quantity):
+        self.name=name
+        if(price > 0 and quantity>0):
+            self.price=price
+            self.quantity=quantity
+        else:
+            print("Invalid price or quantity")
+        Product.products.append(name)
+p1=Product("Laptop",10000,2)
+p2=Product("Mouse",100,-2)
+p3=Product("Ps5",10000,2)
+print(p1.__dict__)
+print(p2.__dict__)
+print(p3.__dict__)
+print(Product.products)
 
 
