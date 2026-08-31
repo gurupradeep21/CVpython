@@ -99,8 +99,12 @@
 # x=dec1(add)
 # x(10,20)
 
+<<<<<<< HEAD
 #6
 #import functools
+=======
+# import functools
+>>>>>>> cac82c2a60fa1005d9946c5defa6765926e54a89
 # def dec1(func):
 #     @functools.wraps(func)
 #     def wrapper1(*args,**kwargs):
@@ -117,6 +121,7 @@
 # apply_discount(2500)
 # print(apply_discount.__name__)
 
+<<<<<<< HEAD
 # def verify_user(func):
 #     def wrapper1(*args,**kwargs):
 #         func(*args,**kwargs)
@@ -202,3 +207,17 @@
 #             print("Limit Reached, Please try again later")
 #     return login
 # login("Pradeep@122","143144")
+=======
+def verify_user(func):
+    def wrapper1(*args,**kwargs):
+        func(*args,**kwargs)
+        print("User verified")
+        
+    return wrapper1
+
+def log_transaction(func):
+    def wrapper2(*args,**kwargs):
+        func(*args,**kwargs)
+        print("Transaction logged")
+    return wrapper2
+>>>>>>> cac82c2a60fa1005d9946c5defa6765926e54a89
