@@ -178,6 +178,9 @@ acc2.display()
 # print(p3.__dict__)
 # print(Product.products)
 
+
+
+#1
 #A company wants to generate basic salary information when employee objects are created.
 # Create a class Employee with class variables company = "TechCorp" and employee_count = 0.
 # The constructor should accept name, department, salary, and experience.
@@ -226,3 +229,78 @@ emp3=Employee("balaji","sales",60000,4)
 print(emp1.pay_details)
 print(emp2.pay_details)
 print(emp3.pay_details)
+
+#2
+#A mobile store creates a purchase object whenever a customer buys a phone.
+# Create a class MobilePurchase with a class variable store_name = "Smart Mobiles" and purchase_count = 0.
+# The constructor should accept customer, brand, price, storage, and quantity.
+# Validate that price and quantity are positive and that storage is either 64, 128, 256, or 512 GB.
+# Calculate the total price inside the constructor.
+# If the total exceeds ₹50,000, apply a 10% discount; otherwise, apply a 5% discount.
+# Store the complete purchase information in a dictionary called purchase_details.
+# Increment purchase_count for every valid purchase. Create three objects and display their _dict_.
+
+class MobilePurchase():
+    store_name = "Smart Mobiles"
+    purchase_count=0
+    def __init__(self,customer, brand,price, storage,quantity):
+        self.customer=customer
+        self.brand=brand
+        if(price>0 and quantity>0 and (storage==64 or storage==128 or storage==256 or storage==512)):
+            self.price=price
+            self.quantity=quantity
+            self.storage=storage
+            if(price>50000):
+                discount=price*0.1
+            else:
+                discount=price*0.05
+            final_price=price-discount
+            MobilePurchase.purchase_count+=1
+
+            self.purchase_details={"customer":customer,
+                                   "Brand":brand,
+                                   "Price":price,
+                                   "Storage":storage,
+                                   "Quantity":quantity,
+                                   "Discount":discount,
+                                   "Final Price":quantity * final_price
+                          }
+        else:
+            print("Invalid price or quantity or storage")
+p1=MobilePurchase("pradeep","poco",14000,100,1)
+p2=MobilePurchase("balaji","moto",60000,256,1)
+p3=MobilePurchase("pavan","samsung",24000,128,1)
+print(p1.__dict__)
+print(p2.__dict__)
+print(p3.__dict__)
+
+#3
+#Create a class Product with a class variable store = "ShopEasy".
+#The constructor should accept name, price, and quantity and
+# create an instance dictionary product_details containing the product name, price, quantity, and the calculated total price.
+# Create two Product objects. After creating the objects, change the price of the first product using its instance variable.
+# Then change the price stored inside the product_details dictionary of the first product.
+# Display the __dict__ of the first product and explain why the two price values can be different.
+
+class Product:
+    store = "ShopEasy"
+
+    def __init__(self, name, price, quantity):
+        self.name = name
+        self.price = price
+        self.quantity = quantity
+
+        self.product_details = {
+            "name": name,
+            "price": price,
+            "quantity": quantity,
+            "total_price": price * quantity
+        }
+
+
+p1 = Product("Laptop", 50000, 2)
+p2 = Product("Mouse", 1000, 3)
+
+p1.price = 55000
+p1.product_details["price"] = 60000
+print(p1.__dict__)
