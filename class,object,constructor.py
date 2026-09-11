@@ -25,6 +25,8 @@
 # print(phone2.price)
 # print(phone2.brand)
 # print(Phone.count)
+# print(phone1.__dict__)
+# print(phone2.__dict__)
 
 # class A:
 #     x=40
@@ -33,7 +35,7 @@
 # obj=A(40) #instance variable #legb
 # print(obj.y)
 
-# def outer():
+# def outer(y):
 #     x=20
 #     def inner():
 #         x=40
@@ -46,7 +48,7 @@
 #         self.y=y
 # obj1=A("hey") #instance variable #legb
 #
-# #print(obj.y)
+# print(obj1.y)
 # print(A.__dict__)
 # print(obj1.__dict__)
 
@@ -62,7 +64,7 @@
 # print(obj2.__dict__)
 # print(obj3.__dict__)
 #
-# obj2.__dict__['z']=40 ----
+# obj2.__dict__['z']=40
 # print(obj2.__dict__)
 
 # class computer:
@@ -113,29 +115,49 @@
 #             self.age=age
 #         else:
 #             print("not eligible")
-# obj=user(20)
+# obj=user(19)
 # print(obj.age)
 
-class BankAccount():
-    bank_name="ABC Bank"
-    def __init__(self,account_holder,account_number,balance):
-        self.account_holder=account_holder
-        self.account_number=account_number
-        if(balance<0):
-            self.balance=0
-        else:
-            self.balance=balance
-    def display(self):
-        print("Bank Name: ",BankAccount.bank_name)
-        print("Account Holder: ",self.account_holder)
-        print("account number: ",self.account_number)
-        print("Balance: ",self.balance)
-
-acc1=BankAccount("pradeep",12351647,100000)
-acc2=BankAccount("balaji",9786747,-4000)
-acc1.display()
-acc2.display()
-
+# class BankAccount():
+#     bank_name="ABC Bank"
+#     def __init__(self,account_holder,account_number,balance):
+#         self.account_holder=account_holder
+#         self.account_number=account_number
+#         if(balance<0):
+#             self.balance=0
+#         else:
+#             self.balance=balance
+#     def display(self):
+#         print("Bank Name: ",BankAccount.bank_name)
+#         print("Account Holder: ",self.account_holder)
+#         print("account number: ",self.account_number)
+#         print("Balance: ",self.balance)
+#
+# acc1=BankAccount("pradeep",12351647,100000)
+# acc2=BankAccount("balaji",9786747,-4000)
+# acc1.display()
+# acc2.display()
+#
+# class BankAccount():
+#     bank_name="ABC Bank"
+#     def __init__(self,account_holder,account_number,balance):
+#         self.account_holder=account_holder
+#         self.account_number=account_number
+#         if(balance<0):
+#             self.balance=0
+#         else:
+#             self.balance=balance
+#     # def display(self):
+#     #     print("Bank Name : ",BankAccount.bank_name)
+#     #     print("Account Holder : ",self.account_holder)
+#     #     print("Account N0. : ",self.account_number)
+#     #     print("Balance :",self.balance)
+# a1=BankAccount("pradeeep",2356468,7865584)
+# a2=BankAccount("pdeeep",235648,5584)
+# # a1.display()
+# # a2.display()
+# print(a1.__dict__)
+# print(a2.__dict__)
 
 # def display(obj):
 #     print(obj.__dict__)
@@ -159,31 +181,31 @@ acc2.display()
 # print(s3.__dict__)
 
 #3
-products=[]
-class Product():
-    store_name = "ABC Store"
-    def __init__(self,name,price,quantity):
-        global products
-        self.name=name
-        if(price > 0 and quantity>0):
-            self.price=price
-            self.quantity=quantity
-        else:
-            print("Invalid price or quantity")
-        products.append(name)
-p1=Product("Laptop",10000,2)
-p2=Product("Mouse",100,-2)
-p3=Product("Ps5",10000,2)
-print(p1.__dict__)
-print(p2.__dict__)
-print(p3.__dict__)
-def display(x):
-    print(x.name)
-    print(x.price)
-    print(x.quantity)
-    print(Product.store_name)
-display(p1)
-print(products)
+# products=[]
+# class Product():
+#     store_name = "ABC Store"
+#     def __init__(self,name,price,quantity):
+#         global products
+#         self.name=name
+#         if(price > 0 and quantity>0):
+#             self.price=price
+#             self.quantity=quantity
+#         else:
+#             print("Invalid price or quantity")
+#         products.append(name)
+# p1=Product("Laptop",10000,2)
+# p2=Product("Mouse",100,-2)
+# p3=Product("Ps5",10000,2)
+# print(p1.__dict__)
+# print(p2.__dict__)
+# print(p3.__dict__)
+# def display(x):
+#     print(x.name)
+#     print(x.price)
+#     print(x.quantity)
+#     print(Product.store_name)
+# display(p1)
+# print(products)
 
 
 
@@ -231,8 +253,8 @@ print(products)
 # emp2=Employee("pavan","Testing",70000,2)
 # emp3=Employee("balaji","sales",60000,4)
 # # print(emp1.__dict__)
-# # print(emp2.__dict__)
-# # print(emp3.__dict__)
+# print(emp2.__dict__)
+# print(emp3.__dict__)
 # print(emp1.pay_details)
 # print(emp2.pay_details)
 # print(emp3.pay_details)

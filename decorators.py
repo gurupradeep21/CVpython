@@ -161,24 +161,21 @@
 
 # 11/08/2026
 #1
-# def verify_user(func):
-#     def wrap2(*args,**kwargs):
-#         print("User Verified")
-#         func(*args,**kwargs)
-#     return wrap2
-#
-# def log_trans(func):
-#     def wrp2(*args,**kwargs):
-#         func(*args,**kwargs)
-#         print("transaction Logged")
-#     return wrp2
-#
-# @log_trans
-# @verify_user
-# def check_balance(balance):
-#      print("Balance displayed: ",balance)
-#
-# check_balance(10000)
+def verify_user(func):
+    def wrap2(*args,**kwargs):
+        print("User Verified")
+        func(*args,**kwargs)
+    return wrap2
+def log_trans(func):
+    def wrp2(*args,**kwargs):
+        func(*args,**kwargs)
+        print("transaction Logged")
+    return wrp2
+@log_trans
+@verify_user
+def check_balance(balance):
+     print("Balance displayed: ",balance)
+check_balance(10000)
 
 
 # USA=0
@@ -207,16 +204,5 @@
 #     return login
 # login("Pradeep@122","143144")
 
-def verify_user(func):
-    def wrapper1(*args,**kwargs):
-        func(*args,**kwargs)
-        print("User verified")
-        
-    return wrapper1
 
-def log_transaction(func):
-    def wrapper2(*args,**kwargs):
-        func(*args,**kwargs)
-        print("Transaction logged")
-    return wrapper2
 
