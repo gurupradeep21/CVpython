@@ -112,7 +112,7 @@
 # l2=reduce(lambda x,y:x if len(x)>len(y) else y,l1)
 # print(l2)
 #
-# # --------------------------------------------------------------------------
+# # ----------------------------------------------
 # #Given a list of product prices, write a program to filter prices above ₹500,
 # # then apply a 10% discount using map(), and compute the final total bill using reduce().
 #
