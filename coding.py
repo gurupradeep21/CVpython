@@ -103,6 +103,8 @@ print("hi")
 # else:
 #     print("odd")
 
+
+
 n=int(input())
 x=0
 while(x<n):
@@ -111,8 +113,6 @@ if(x==n):
     print("even")
 else:
     print("odd")
-
-
 
 
 
